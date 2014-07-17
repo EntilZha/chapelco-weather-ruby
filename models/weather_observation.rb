@@ -17,6 +17,9 @@ class WeatherObservation
     @local_pressure = record['PRES_LOC']
     @absolute_pressure = record['PRES_ABS']
     @rain_sum = record['RAIN_SUM']
-    @datetime = record['DATE_TIME']
+    @datetime = WeatherObservation.convert_time(record['DATE_TIME'])
+  end
+  def self.convert_time(t)
+    Time.at((t - 25569) * 86400).utc
   end
 end

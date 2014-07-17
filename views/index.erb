@@ -17,17 +17,10 @@
         <div class="col-md-12 card">
           <a href="http://www.chapelco.com.ar/" class="center-block"><img src="images/chapelco-logo.png" alt="Chapelco"></a>
           <h1 class="center-block text-center">Weather at 1700M</h1>
+          <h2><%= record.datetime.strftime('%m/%d/%Y at %k:%M') %></h2>
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
-          <div class="card reading">
-            <div class="hint-container">
-              <h4 class="hint-text">Time</h4>
-            </div>
-            <h2 class="text-capitalize">13:30</h2>
-          </div>
-        </div>
         <div class="col-md-3">
           <div class="card reading">
             <div class="hint-container">
@@ -52,6 +45,14 @@
             <h2 class="text-capitalize"><%= record.relative_humidity %>%</h2>
           </div>
         </div>
+        <div class="col-md-3">
+          <div class="card reading">
+            <div class="hint-container">
+              <h4 class="hint-text">Precipitation</h4>
+            </div>
+            <h2 class="text-capitalize"><%= record.rain_sum %>mm</h2>
+          </div>
+        </div>
       </div>
       <div class="row">
         <div class="col-md-3">
@@ -73,22 +74,21 @@
         <div class="col-md-3">
           <div class="card reading">
             <div class="hint-container">
-              <h4 class="hint-text">Precipitation</h4>
-            </div>
-            <h2 class="text-capitalize"><%= record.rain_sum %>mm</h2>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card reading">
-            <div class="hint-container">
               <h4 class="hint-text">Weather</h4>
             </div>
             <h2 class="text-capitalize"><a href="http://www.chapelco.com.ar/parte-diario-clima.php" class="glyphicon glyphicon-cloud white"></a></h2>
           </div>
         </div>
+        <div class="col-md-3">
+          <div class="card reading">
+            <div class="hint-container">
+              <h4 class="hint-text">Cameras</h4>
+            </div>
+            <h2 class="text-capitalize"><a href="http://www.chapelco.com.ar/camara-base1.php" class="glyphicon glyphicon-camera white"></a></h2>
+          </div>
+        </div>
       </div>
     </div>
-
     <div id="footer-container">
       <div id="footer">
         Created by <a href="http://pedro-rodriguez.com" class="white">Pedro Rodriguez</a> of <a href="http://snowgeek.org/" class="white">SnowGeek</a>
