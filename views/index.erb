@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="description" content="Weather at Chapelco Ski Resort at 1700M">
+    <meta name="author" content="Pedro Rodriguez">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="icon" href="/favicon.ico">
+    <title>Chapelco Weather</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="row" id="title-row">
+        <div class="col-md-12 card">
+          <a href="http://www.chapelco.com.ar/" class="center-block"><img src="images/chapelco-logo.png" alt="Chapelco"></a>
+          <h1 class="center-block text-center">Weather at 1700M</h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card reading">
+            <div class="hint-container">
+              <h4 class="hint-text">Time</h4>
+            </div>
+            <h2 class="text-capitalize">13:30</h2>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card reading">
+            <div class="hint-container">
+              <h4 class="hint-text">Temperature</h4>
+            </div>
+            <h2 class="text-capitalize"><%= record.temp %> &deg;C</h2>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card reading">
+            <div class="hint-container">
+              <h4 class="hint-text">Dew Point</h4>
+            </div>
+            <h2 class="text-capitalize"><%= record.dew_point %> &deg;C</h2>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card reading">
+            <div class="hint-container">
+              <h4 class="hint-text">Rel. Humidity</h4>
+            </div>
+            <h2 class="text-capitalize"><%= record.relative_humidity %>%</h2>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-3">
+          <div class="card reading">
+            <div class="hint-container">
+              <h4 class="hint-text">Pressure</h4>
+            </div>
+            <h2 class="text-capitalize"><%= record.local_pressure %> hPa</h2>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card reading">
+            <div class="hint-container">
+              <h4 class="hint-text">Abs. Pressure</h4>
+            </div>
+            <h2 class="text-capitalize"><%= record.absolute_pressure %> hPa</h2>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card reading">
+            <div class="hint-container">
+              <h4 class="hint-text">Precipitation</h4>
+            </div>
+            <h2 class="text-capitalize"><%= record.rain_sum %>mm</h2>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card reading">
+            <div class="hint-container">
+              <h4 class="hint-text">Weather</h4>
+            </div>
+            <h2 class="text-capitalize"><a href="http://www.chapelco.com.ar/parte-diario-clima.php" class="glyphicon glyphicon-cloud white"></a></h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer-container">
+      <div id="footer">
+        Created by <a href="http://pedro-rodriguez.com" class="white">Pedro Rodriguez</a> of <a href="http://snowgeek.org/" class="white">SnowGeek</a>
+      </div>
+    </div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>
