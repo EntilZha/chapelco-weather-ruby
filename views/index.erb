@@ -20,13 +20,26 @@
           <h2><%= record.datetime.strftime('%m/%d/%Y at %k:%M') %></h2>
         </div>
       </div>
-      <div class="row">
+      <div class="row weather-cards">
         <div class="col-md-3">
-          <div class="card reading">
+          <div class="card reading" id="temp-card">
             <div class="hint-container">
               <h4 class="hint-text">Temperature</h4>
             </div>
             <h2 class="text-capitalize"><%= record.temp %> &deg;C</h2>
+            <div class="chart-hint"><h4 class="glyphicon glyphicon-stats"></h4></div>
+          </div>
+          <div class="modal fade" id="temp-modal" tabindex="-1" role="dialog" aria-labelledby="temp-modal-label" aria-hidden="true">
+            <div class="modal-dialog graph-modal">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div id="temp-plot"></div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-3">
@@ -54,7 +67,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row weather-cards">
         <div class="col-md-3">
           <div class="card reading">
             <div class="hint-container">
@@ -89,12 +102,17 @@
         </div>
       </div>
     </div>
-    <div id="footer-container">
+    <div id="footer-container" class="white">
       <div id="footer">
         Created by <a href="http://pedro-rodriguez.com" class="white">Pedro Rodriguez</a> of <a href="http://snowgeek.org/" class="white">SnowGeek</a>
       </div>
     </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/highcharts.js"></script>
+    <script src="js/init.js"></script>
+    <script type="text/javascript">
+      var data = <%= past_weather %>;
+    </script>
   </body>
 </html>

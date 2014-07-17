@@ -8,9 +8,7 @@ body {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    color: #fff;
     text-align: center;
-    text-shadow: 0 1px 3px rgba(0,0,0,.5);
 }
 .container {
     min-height: 100%;
@@ -27,6 +25,12 @@ body {
     background-color: rgba(219, 219, 219, .7);
     margin-bottom: 20px;
     position: relative;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+.weather-cards .card:hover {
+    background-color: rgba(150, 150, 150, .7);
+    cursor: pointer;
 }
 .reading {
     height: 100px;
@@ -62,4 +66,12 @@ body {
 }
 .white {
     color: white;
+}
+.graph-modal {
+    width: 700px;
+}
+.chart-hint {
+    position: absolute;
+    bottom: -2px;
+    right: 8px;
 }
