@@ -2,10 +2,11 @@ require 'sinatra'
 require './models/weather_observation'
 require 'dbf'
 require 'json'
-
-widgets = DBF::Table.new('SinusOrg.dbf').to_a
+require 'open-uri'
 
 get '/' do
+  weather_db = open('https://docs.google.com/uc?id=0B06ZoNF0o91ncXRPdVRuZjBDaE0&export=download')
+  widgets = DBF::Table.new(weather_db).to_a
   weather_record = WeatherObservation.parse_dbf_record(widgets[-1].attributes)
   past_weather = {
       times: [],
