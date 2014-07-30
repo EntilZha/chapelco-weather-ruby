@@ -43,19 +43,45 @@
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card reading">
+          <div class="card reading" id="dew-card">
             <div class="hint-container">
               <h4 class="hint-text">Dew Point</h4>
             </div>
             <h2 class="text-capitalize"><%= record.dew_point %> &deg;C</h2>
+            <div class="chart-hint"><h4 class="glyphicon glyphicon-stats"></h4></div>
+          </div>
+          <div class="modal fade" id="dew-modal" tabindex="-1" role="dialog" aria-labelledby="dew-modal-label" aria-hidden="true">
+            <div class="modal-dialog graph-modal">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div id="dew-plot"></div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card reading">
+          <div class="card reading" id="humidity-card">
             <div class="hint-container">
-              <h4 class="hint-text">Rel. Humidity</h4>
+              <h4 class="hint-text">Humidity</h4>
             </div>
             <h2 class="text-capitalize"><%= record.relative_humidity %>%</h2>
+            <div class="chart-hint"><h4 class="glyphicon glyphicon-stats"></h4></div>
+          </div>
+          <div class="modal fade" id="humidity-modal" tabindex="-1" role="dialog" aria-labelledby="humidity-modal-label" aria-hidden="true">
+            <div class="modal-dialog graph-modal">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div id="humidity-plot"></div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-3">
@@ -63,25 +89,51 @@
             <div class="hint-container">
               <h4 class="hint-text">Precipitation</h4>
             </div>
-            <h2 class="text-capitalize"><%= record.rain_sum %>mm</h2>
+            <h2 class="text-capitalize"><%= avg_precip %>mm/hr</h2>
           </div>
         </div>
       </div>
       <div class="row weather-cards">
         <div class="col-md-3">
-          <div class="card reading">
+          <div class="card reading" id="pressure-card">
             <div class="hint-container">
               <h4 class="hint-text">Pressure</h4>
             </div>
             <h2 class="text-capitalize"><%= record.local_pressure %> hPa</h2>
+            <div class="chart-hint"><h4 class="glyphicon glyphicon-stats"></h4></div>
+          </div>
+          <div class="modal fade" id="pressure-modal" tabindex="-1" role="dialog" aria-labelledby="pressure-modal-label" aria-hidden="true">
+            <div class="modal-dialog graph-modal">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div id="pressure-plot"></div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-3">
-          <div class="card reading">
+          <div class="card reading" id="abspressure-card">
             <div class="hint-container">
               <h4 class="hint-text">Abs. Pressure</h4>
             </div>
             <h2 class="text-capitalize"><%= record.absolute_pressure %> hPa</h2>
+            <div class="chart-hint"><h4 class="glyphicon glyphicon-stats"></h4></div>
+          </div>
+          <div class="modal fade" id="abspressure-modal" tabindex="-1" role="dialog" aria-labelledby="abspressure-modal-label" aria-hidden="true">
+            <div class="modal-dialog graph-modal">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div id="abspressure-plot"></div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="col-md-3">
